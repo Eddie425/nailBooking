@@ -20,7 +20,7 @@ class Main extends React.Component {
     let src = "https://nailbooking2021.herokuapp.com/calendarEvent";
     fetch(src)
       .then((response) => {
-        return response.json();
+        return response;
       })
       .then((data) => {
         console.log(data);
