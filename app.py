@@ -8,8 +8,9 @@ app = Flask(__name__, static_url_path='', static_folder='frontend/build')
 api = Api(app)
 
 
-@app.route("/", defaults={'path': ''})
+@app.route("/")
 def serve(path):
+    print("call index.html")
     return send_from_directory(app.static_folder, 'index.html')
 
 
