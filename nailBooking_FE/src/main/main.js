@@ -17,17 +17,16 @@ class Main extends React.Component {
     });
   }
   componentDidMount() {
-    let src =
-      "https://data.taipei/api/v1/dataset/36847f3f-deff-4183-a5bb-800737591de5?scope=resourceAquire";
+    let src = "https://nailbooking2021.herokuapp.com/calendarEvent";
     fetch(src)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
         console.log(data);
-        this.setState({
-          data: data.result.results,
-        });
+        // this.setState({
+        //   data: data.result.results,
+        // });
       });
   }
 
@@ -55,7 +54,6 @@ class Main extends React.Component {
     return (
       <>
         {page}
-        <ticTacToeReducer />
       </>
     );
   }
