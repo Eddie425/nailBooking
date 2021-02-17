@@ -1,7 +1,5 @@
 import React from 'react';
 import Header from "../header/header.js";
-import "../place/place.css";
-// import Place from "../place/place.js";
 
 class Home extends React.Component {
     constructor(props) {
