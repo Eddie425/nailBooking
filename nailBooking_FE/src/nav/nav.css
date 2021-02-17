@@ -1,0 +1,17 @@
+nav{
+    display: flex;
+    background-color: rgb(13, 115, 209);
+}
+nav>.logo{
+    flex: none;
+    width: 200px;
+    font-size: 24px;
+    font-weight: bold;
+}
+nav>.menu{
+    flex: auto;
+    display: flex;justify-content: flex-end;
+}
+nav>.menu>.item{
+    margin: 0px 10px;
+}
