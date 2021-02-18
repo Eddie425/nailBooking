@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, jsonify
 from flask_restful import Api, Resource, reqparse
 # from flask_cors import CORS #comment this on deployment
 from api.UserApi import UserApi
@@ -22,8 +22,9 @@ def get_calendarEvent():
     event_time_array = []
     for event in events:
         start = event['start'].get('dateTime', event['start'].get('date'))
-        event_time_array.append("Honda")
-    return event_time_array
+        event_time_array.append(start)
+    print(event_time_array)
+    return jsonify(event_time_array)
 
 
 api.add_resource(UserApi, '/flask/hello')
