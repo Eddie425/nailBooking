@@ -14,8 +14,8 @@ class DayPick extends React.Component {
   }
 
   componentDidMount() {
-    // let src = "https://nailbooking2021.herokuapp.com/calendarEvent";
-    let src = "http://127.0.0.1:5000/calendarEvent";
+    let src = "https://nailbooking2021.herokuapp.com/calendarEvent";
+    // let src = "http://127.0.0.1:5000/calendarEvent";
     fetch(src)
       .then((response) => response.json())
       .then((jsonResponse) => {
