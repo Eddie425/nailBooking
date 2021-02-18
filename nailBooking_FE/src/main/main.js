@@ -19,20 +19,7 @@ class Main extends React.Component {
       page: number,
     });
   }
-  componentDidMount() {
-    // let src = "https://nailbooking2021.herokuapp.com/calendarEvent";
-    // fetch(src)
-    //   .then((response) => {
-    //     return response;
-    //   })
-    //   .then((data) => {
-    //     console.log(data);
-    //     // this.setState({
-    //     //   data: data.result.results,
-    //     // });
-    //   });
-  }
-
+  
   render() {
     let page;
     let statePage = this.state.page;

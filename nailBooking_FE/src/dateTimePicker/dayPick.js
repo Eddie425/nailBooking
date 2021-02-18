@@ -8,21 +8,25 @@ class DayPick extends React.Component {
     this.handleDayClick = this.handleDayClick.bind(this);
     this.state = {
       selectedDay: undefined,
-      thisMonth: new Date().getMonth() + 1,
+      thisMonth: new Date().getMonth(),
+      disabledDays: [],
     };
   }
 
   componentDidMount() {
-    let src = "https://nailbooking2021.herokuapp.com/calendarEvent";
+    // let src = "https://nailbooking2021.herokuapp.com/calendarEvent";
+    let src = "http://127.0.0.1:5000/calendarEvent";
     fetch(src)
-      .then((response) => {
-        return response;
-      })
-      .then((data) => {
-        console.log(data);
-        // this.setState({
-        //   data: data.result.results,
-        // });
+      .then((response) => response.json())
+      .then((jsonResponse) => {
+        var disabledDaysArray = [{ daysOfWeek: [0, 1] }];
+        jsonResponse.forEach((x) => {
+          disabledDaysArray.push(new Date(x))
+        });
+        this.setState({
+          disabledDays: disabledDaysArray,
+        });
+        console.log(this.state.disabledDays);
       });
   }
 
@@ -36,21 +40,11 @@ class DayPick extends React.Component {
   }
 
   render() {
-    const disabledDays = [
-      new Date(2021, 2, 27),
-      new Date(2021, 2, 28),
-      {
-        after: new Date(2021, 2, 10),
-        before: new Date(2021, 2, 17),
-      },
-      { daysOfWeek: [0, 1] },
-    ];
-    console.log(this.state.thisMonth);
-
+    console.log("this.state.thisMonth ==> " + this.state.thisMonth);
     return (
       <DayPicker
         initialMonth={new Date(2021, this.state.thisMonth)}
-        disabledDays={disabledDays}
+        disabledDays={this.state.disabledDays}
         selectedDays={this.state.selectedDay}
         onDayClick={this.handleDayClick}
         canChangeMonth={false}
