@@ -29,6 +29,7 @@
     "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-datetime-picker": "^3.1.0",
+    "react-day-picker": "^7.4.8",
     "react-dom": "^17.0.1",
     "react-widgets": "^4.6.1",
     "react-widgets-moment": "^4.0.30",

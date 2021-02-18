@@ -18,8 +18,12 @@ def serve(path):
 @app.route("/calendarEvent")
 def get_calendarEvent():
     print("call calendarEvent")
-    quickstart.main()
-    return ""
+    events = quickstart.get_event()
+    event_time_array = []
+    for event in events:
+        start = event['start'].get('dateTime', event['start'].get('date'))
+        event_time_array.append("Honda")
+    return event_time_array
 
 
 api.add_resource(UserApi, '/flask/hello')

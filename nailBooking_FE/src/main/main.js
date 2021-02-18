@@ -1,20 +1,10 @@
 import "./main.css";
 import "./style.css";
-import 'react-widgets/dist/css/react-widgets.css';
 import React, { useState } from "react";
-import { render } from "react-dom";
-import Moment from "moment";
-import momentLocalizer from "react-widgets-moment";
-import { DateTimePicker } from "react-widgets";
 import Home from "../pages/home.js";
 import PlaceDetail from "../pages/placeDetail.js";
+import DayPick from "../dateTimePicker/dayPick.js";
 
-function DateTimePick() {
-  Moment.locale("tw");
-  momentLocalizer();
-
-  return <DateTimePicker />;
-}
 
 class Main extends React.Component {
   constructor(props) {
@@ -57,7 +47,7 @@ class Main extends React.Component {
               <div className="row">
                 <div className="col-md-6">
                   <div className="form-group">
-                    <DateTimePick />
+                    <DayPick />
                   </div>
                 </div>
               </div>
@@ -66,10 +56,10 @@ class Main extends React.Component {
                   <div className="form-group">
                     <input
                       className="form-control"
-                      type="email"
-                      placeholder="Enter your Email"
+                      type="name"
+                      placeholder="姓名"
                     />
-                    <span className="form-label">Email</span>
+                    {/* <span className="form-label">姓名</span> */}
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -77,9 +67,9 @@ class Main extends React.Component {
                     <input
                       className="form-control"
                       type="tel"
-                      placeholder="Enter you Phone"
+                      placeholder="電話"
                     />
-                    <span className="form-label">Phone</span>
+                    {/* <span className="form-label">電話</span> */}
                   </div>
                 </div>
               </div>
@@ -88,10 +78,10 @@ class Main extends React.Component {
                   <div className="form-group">
                     <input
                       className="form-control"
-                      type="email"
-                      placeholder="Enter your Email"
+                      type="birthday"
+                      placeholder="生日 : yyyymmdd"
                     />
-                    <span className="form-label">Email</span>
+                    {/* <span className="form-label">生日</span> */}
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -99,9 +89,9 @@ class Main extends React.Component {
                     <input
                       className="form-control"
                       type="tel"
-                      placeholder="Enter you Phone"
+                      placeholder="服務項目"
                     />
-                    <span className="form-label">Phone</span>
+                    {/* <span className="form-label">服務項目</span> */}
                   </div>
                 </div>
               </div>

@@ -34,7 +34,7 @@
 	right: 0;
 	bottom: 0;
 	top: 0;
-	background: rgba(0, 0, 0, 0.7);
+	background: white;
 	z-index: -1;
 }
 
@@ -49,7 +49,7 @@
 	text-transform: capitalize;
 	font-size: 42px;
 	margin: 0px;
-	color: #fff;
+	color: black;
 }
 
 .booking-form .form-group {
@@ -58,12 +58,12 @@
 }
 
 .booking-form .form-control {
-	background-color: rgba(255, 255, 255, 0.2);
+	background-color:whitesmoke;
 	height: 60px;
 	padding: 0px 25px;
 	border: none;
 	border-radius: 40px;
-	color: #fff;
+	color: black;
 	-webkit-box-shadow: 0px 0px 0px 2px transparent;
 	box-shadow: 0px 0px 0px 2px transparent;
 	-webkit-transition: 0.2s;
@@ -71,15 +71,15 @@
 }
 
 .booking-form .form-control::-webkit-input-placeholder {
-	color: rgba(255, 255, 255, 0.5);
+	color: rgba(53, 50, 50, 0.897);
 }
 
 .booking-form .form-control:-ms-input-placeholder {
-	color: rgba(255, 255, 255, 0.5);
+	color: rgba(53, 50, 50, 0.897);
 }
 
 .booking-form .form-control::placeholder {
-	color: rgba(255, 255, 255, 0.5);
+	color: rgba(53, 50, 50, 0.897);
 }
 
 .booking-form .form-control:focus {
@@ -92,7 +92,7 @@
 }
 
 .booking-form input[type="date"].form-control:invalid {
-	color: rgba(255, 255, 255, 0.5);
+	color: rgba(53, 50, 50, 0.897);
 }
 
 .booking-form input[type="date"].form-control+.form-label {
@@ -121,7 +121,7 @@
 	height: 32px;
 	text-align: center;
 	pointer-events: none;
-	color: rgba(255, 255, 255, 0.5);
+	color: whitesmoke;
 	font-size: 14px;
 }
 
@@ -133,7 +133,7 @@
 }
 
 .booking-form select.form-control option {
-	color: #000;
+	color: black;
 }
 
 .booking-form .form-label {
@@ -142,7 +142,7 @@
 	left: 25px;
 	opacity: 0;
 	color: #ff8846;
-	font-size: 11px;
+	font-size: 16px;
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 1.3px;
@@ -162,8 +162,8 @@
 }
 
 .booking-form .submit-btn {
-	color: #fff;
-	background-color: #e35e0a;
+	color: black;
+	background-color: rgb(13, 115, 209);
 	font-weight: 700;
 	height: 60px;
 	padding: 10px 30px;

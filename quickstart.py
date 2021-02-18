@@ -37,23 +37,7 @@ def main():
         with open('token.pickle', 'wb') as token:
             pickle.dump(creds, token)
 
-    service = build('calendar', 'v3', credentials=creds)
-
-    # Call the Calendar API
-    now = datetime.datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time
-    print('Getting the upcoming 10 events')
-    events_result = service.events().list(calendarId='eddiec0425@gmail.com', timeMin=now,
-                                          maxResults=10, singleEvents=True,
-                                          orderBy='startTime').execute()
-    events = events_result.get('items', [])
-    print(events)
-
-    if not events:
-        print('No upcoming events found.')
-    for event in events:
-        start = event['start'].get('dateTime', event['start'].get('date'))
-        end = event['end'].get('dateTime', event['end'].get('date'))
-        print(start, end, event['summary'])
+    return build('calendar', 'v3', credentials=creds)
 
     # insert_event = {
     #         'summary': 'Test Google Calendar',
@@ -86,14 +70,33 @@ def main():
     # insert_event = service.events().insert(calendarId='primary', body=insert_event).execute()
     # print('Event created: %s' % (insert_event.get('htmlLink')))
 
-    calendar_list_entry = service.calendarList().get(calendarId='').execute()
-    print(calendar_list_entry)
+    # calendar_list_entry = service.calendarList().get(calendarId='').execute()
+    # print(calendar_list_entry)
+    #
+    # calendar = service.calendars().get(calendarId='eddiec0425@gmail.com').execute()
+    # print(calendar)
+    #
+    # event = service.events().get(calendarId='eddiec0425@gmail.com', eventId='').execute()
+    # print(event)
 
-    calendar = service.calendars().get(calendarId='eddiec0425@gmail.com').execute()
-    print(calendar)
 
-    event = service.events().get(calendarId='eddiec0425@gmail.com', eventId='').execute()
-    print(event)
+def get_event():
+    # Call the Calendar API
+    now = datetime.datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time
+    print('Getting the upcoming 10 events')
+    events_result = main().events().list(calendarId='eddiec0425@gmail.com', timeMin=now,
+                                          maxResults=10, singleEvents=True,
+                                          orderBy='startTime').execute()
+    events = events_result.get('items', [])
+    print(events)
+
+    if not events:
+        print('No upcoming events found.')
+    for event in events:
+        start = event['start'].get('dateTime', event['start'].get('date'))
+        end = event['end'].get('dateTime', event['end'].get('date'))
+        print(start, end, event['summary'])
+    return events
 
 
 if __name__ == '__main__':
